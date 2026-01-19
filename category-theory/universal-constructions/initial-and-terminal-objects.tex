@@ -1,7 +1,6 @@
-
 \documentclass{atomic}
 
-\title{Terminal and Initial Objects}
+\title{Initial and Terminal Objects}
 \newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
 
 \begin{document}
@@ -16,11 +15,11 @@
         \textit{These} two definitions are \ex{Duality}{dual}.
     \end{remark*} 
 
-    \begin{example}[\ex{CategoryOfSets}{\textbf{Set}} and \ex{CategoryOfTopologies}{\textbf{Top}}]
+    \begin{example}[\textbf{\ex{CategoryOfSets}{Set}} and \textbf{\ex{CategoryOfTopologies}{Top}}]
         In \textbf{\ex{CategoryOfSets}{Set}} and \textbf{\ex{CategoryOfTopologies}{Top}}, the \ex{EmptySet}{empty set} $\emptyset$ is the \textit{initial}, since for each object $X$, the empty \ex{Functions}{function} is the unique morphism from $\emptyset$ to $X$, and the \textit{terminals} are the singletons (one-point \ex{Sets}{sets}), since for each object $X$, the constant \ex{Functions}{function} is the unique morphism from $X$ to any given singleton.
     \end{example}
 
-    \begin{theorem}[Uniqueness up to \ex{Isomorphisms}{Isomorphism}]
+    \begin{theorem}[Uniqueness up to \ex{Isomorphisms}{Isomorphism}] \label{uniqueness}
         In any \ex{Categories}{category}, any two \textit{initial objects} are \ex{Isomorphisms}{isomorphic}, and any two \textit{terminal objects} are \ex{Isomorphisms}{isomorphic}.
     \end{theorem}
     \begin{proof}

@@ -1,0 +1,36 @@
+\documentclass{atomic}
+
+\title{Products}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    Let $\{ c_i \}_{i \in I}$ be a \ex{Collections}{family} of objects in a \ex{Categories}{category} $C$.
+    \begin{definition}[Auxiliary Category]
+        The \textbf{auxiliary category} $D = D_\text{pr}$ is defined with
+        \begin{itemize}
+            \item objects being the pairs $\left( x, \{\alpha_i\} \right)$, where $x \in C$ and $\alpha_i : x \to c_i$ for some $i \in I$, and
+            \item morphisms from an object $\left( x, \{\alpha_i\}_{i \in I} \right)$ to $\left( y, \{\beta_i\}_{i \in I} \right)$ being the morphisms $\gamma : x \to y$ in $C$ such that $\forall i \in I, \beta_i\gamma = \alpha_i$, i.e., such that the following diagram is \ex{CommutativeDiagrams}{commutative} for all $i$:
+            $$\large\begin{tikzcd}
+                x \arrow[dr, swap, "\alpha_i"] \arrow[rr, "\gamma"] & & y \arrow[dl, "\beta_i"] \\
+                & c_i
+            \end{tikzcd},$$
+        \item \ex{CompositeFunctions}{composition} being the same as in $C$.
+        \end{itemize}
+    \end{definition}
+
+    A \ex{InitialAndTerminalObjects}{terminal object} $\left( p, \{ \pi_i \}_{i \in I} \right) \in D$ is called a \textit{product} of the \ex{Collections}{family} $\{ c_i \}_{i \in I}$. By \ex{InitialAndTerminalObjects}{definition}, for any $\left( x, \{\alpha_i\}_{i \in I} \right) \in D$, there exists a unique $\gamma : x \to p$ in $C$ such that $\forall i, \pi_i\gamma = \alpha_i$, i.e., such that the following diagram is \ex{CommutativeDiagrams}{commutative} for all $i$:
+    $$\large\begin{tikzcd}
+        x \arrow[dr, swap, "\alpha_i"] \arrow[rr, "\exists!\gamma"] & & p \arrow[dl, "\pi_i"] \\
+        & c_i
+    \end{tikzcd}.$$
+
+    \begin{remark*}
+        By \hyperref[InitialAndTerminalObjects-uniqueness]{the uniqueness of terminal objects up to} \ex{Isomorphisms}{isomorphism}, \textit{products} (if they exist) are unique up to \ex{Isomorphisms}{isomorphism} in $D$, which amounts to \ex{Isomorphisms}{isomorphism} in $C$ that preserves the \ex{CommutativeDiagrams}{commutativity}.
+    \end{remark*}
+
+    \begin{definition}[``Product Exists'']
+        We say that a ``\textbf{product exists}'' in $C$ iff a \textit{product} exists for every \ex{Collections}{family} of objects in $C$.
+    \end{definition}
+
+\end{document}
