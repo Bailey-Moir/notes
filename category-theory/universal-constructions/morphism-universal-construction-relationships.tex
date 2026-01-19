@@ -1,0 +1,16 @@
+\documentclass{atomic}
+
+\title{Morphism UC Relationships}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    $$\LARGE\begin{tikzcd}
+        \arrow[d, Rightarrow] \text{\ex{SplitMonicMorphisms}{split monic}} & \arrow[l, Rightarrow] \text{\ex{Isomorphisms}{isomorphic}} \arrow[d, Rightarrow] \arrow[r, Rightarrow] & \text{\ex{SplitEpicMorphisms}{split epic}} \arrow[d, Rightarrow] \\
+        \arrow[d, Rightarrow] \textit{\ex{InjectiveFunctions}{injective}} & \arrow[l, Rightarrow] \textit{\ex{BijectiveFunctions}{bijective}} \arrow[d, Rightarrow] \arrow[r, Rightarrow] & \textit{\ex{SurjectiveFunctions}{surjective}} \arrow[d, Rightarrow] \\
+        \text{\ex{MonicMorphisms}{monic}} & \arrow[l, Rightarrow] \text{\ex{Bimorphisms}{bimorphic}} \arrow[r, Rightarrow] & \text{\ex{EpicMorphisms}{epic}}
+    \end{tikzcd}$$
+    \begin{remark*}
+        For \textbf{Set}, the vertical layers are all equivalent.
+    \end{remark*}
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{atomic}
+\usepackage{hyperref}
+
+\title{Categories}
+\newcommand{\breadcrumb}{Category Theory}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A \textit{category} consists of:
+    \begin{enumerate}
+        \item a \ex{Classes}{class} of $\mathcal{C}$ of \textbf{objects},
+        \item for each pair $x,y \in \mathcal{C}$, a \ex{Sets}{set} $\mathcal{C}(x,y)$ of pairwise \ex{Disjoint Sets}{disjoint} \textbf{morphisms}, and
+        \item for each triple $x,y,z \in \mathcal{C}$, a \ex{Functions}{map} $\mathcal{C}(x,y)\times \mathcal{C}(y,z) \to \mathcal{C}(x,z)$, called a \textbf{\ex{CompositeFunctions}{composition}} and denoted $\left( \alpha,\beta \right) \to \beta\alpha$, such that
+            \begin{itemize}
+                \item \textit{(Associativity)} $\gamma(\beta\alpha) = (\gamma\beta)\alpha$ for all \textbf{morphisms} $\alpha,\beta,\gamma$, and
+                \item \textit{(Identity)} for all $x \in \mathcal{C}$, there exists an \textbf{identity morphism} $1_{x} \in \mathcal{C}(x,x)$ such that $1_{x}\alpha = \alpha$ and $\beta 1_{x} = \beta$ for any \textbf{morphisms} $\alpha,\beta$ where the indicated \textbf{\ex{CompositeFunctions}{composition}} is defined.
+            \end{itemize}
+    \end{enumerate}
+\end{document}

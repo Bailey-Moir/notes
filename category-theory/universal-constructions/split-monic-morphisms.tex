@@ -1,0 +1,42 @@
+
+\documentclass{atomic}
+
+\title{Split Monic Morphisms}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A morphism $\alpha : x \to y$ is \textit{split monic} iff there exists a morphism $\beta : y \to x$ such that $\beta\alpha = 1_{x}$:
+    $$\LARGE\begin{tikzcd}
+        \arrow[loop left, "1_x"] x \arrow[r, shift right, swap, "\alpha"] & y \arrow[l, shift right, swap, dashed, "\exists \beta"]
+    \end{tikzcd}$$
+    \textit{i.e. it has a left inverse.}
+
+    \begin{remark*}
+        \textit{This} definition is \ex{Duality}{dual} to that of \ex{SplitEpicMorphisms}{split epic morphisms}.
+    \end{remark*}
+
+    \begin{theorem} \label{split-monic-implies-monic}
+        \textit{Split monic} $\to$ \ex{MonicMorphisms}{monic}
+    \end{theorem}
+    \begin{proof}
+        Let $\alpha : x \to y$ be a \textit{split monic} morphism in $\mathcal{C}$, so there exists $\beta : y \to x$ such that $\beta\alpha = 1_{x}$.
+
+        For some $z \in \mathcal{C}$, let $\beta_{1},\beta_{2} : z \to x$ such that $\alpha\beta_{1} = \alpha\beta_{2}$. Then
+        $$\beta_{1} = 1_{x}\beta_{1} = \beta\alpha\beta_{1} = \beta\alpha\beta_{2} = 1_{x}\beta_{2} = \beta_{2},$$
+        meaning $\alpha$ is \ex{MonicMorphisms}{monic}. $\qed$
+    \end{proof}
+
+    \begin{theorem}
+        In a \ex{ConcreteCategories}{concrete category}, every \textit{split monic} morphism is \ex{InjectiveFunctions}{injective}.
+    \end{theorem}
+    \begin{proof}
+        Let $\alpha : X \to Y$ be a \textit{split monic} morphism in $\mathcal{C}$, so there exists $\beta : Y \to X$ such that $\beta\alpha = 1_{X}$.
+        Let $x_{1}, x_{2} \in X$ such that $\alpha(x_{1}) = \alpha(x_{2})$. Then
+        \begin{align*}
+            \alpha(x_{1}) &= \alpha(x_{2}) \\
+            \beta\alpha(x_{1}) &= \beta\alpha(x_{2}) \\
+            x_{1} &= x_{2}. \qed
+        \end{align*}
+    \end{proof}
+\end{document}

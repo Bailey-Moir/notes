@@ -1,0 +1,31 @@
+\documentclass{atomic}
+
+\title{Monic Morphisms}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A morphism $\alpha : x \to y$ is \textit{monic} iff in the situation
+    $$\LARGE\begin{tikzcd}
+        z \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, swap, "\beta_2"] & x \arrow[r, "\alpha"] & y
+    \end{tikzcd},$$
+    $$\alpha\beta_{1} = \alpha \beta_{2} \to \beta_{1} = \beta_{2},$$
+    \textit{i.e. it can be cancelled on the left.}
+
+    \begin{remark*}
+        \textit{This} definition is \ex{Duality}{dual} to that of \ex{EpicMorphisms}{epic morphisms}.
+    \end{remark*} 
+
+    \begin{theorem} \label{concrete-injective-implies-monic}
+        In a \ex{ConcreteCategories}{concrete category}, every \ex{InjectiveFunctions}{injective} morphism is \textit{monic}. \\
+    \end{theorem}
+    \begin{proof}
+        Let $\alpha : X \to Y$ be an \ex{InjectiveFunctions}{injective} morphism in a \ex{ConcreteCategories}{concrete category} $\mathcal{C}$. Let $Z \in \mathcal{C}$ and $\beta_{1},\beta_{2} : Z \to X$ such that $\alpha\beta_{1} = \alpha\beta_{2}$. For each $z \in Z$,
+        $$\alpha(\beta_{1}(z)) = \alpha\beta_{1}(z) = \alpha\beta_{2}(z) = \alpha(\beta_{2}(z)),$$
+        meaning $\beta_{1}(z) = \beta_{2}(z)$ by the \ex{Injective Functions}{injectivity} of $\alpha$. Since this applies for all $z \in Z$, this gives $\beta_{1} = \beta_{2}$.
+    \end{proof}
+
+    \begin{theorem}
+        In the \ex{Categories}{category} of \ex{CategoryOfSets}{sets}, \ex{CategoryOfTopologies}{topologies}, \ex{Groups}{groups}, and \ex{Rings}{rings}, a morphism is \ex{Injective Functions}{injective} iff it is \textit{monic}.
+    \end{theorem} 
+\end{document}

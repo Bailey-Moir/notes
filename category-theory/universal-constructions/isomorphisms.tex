@@ -1,0 +1,44 @@
+\documentclass{atomic}
+
+\title{Isomorphisms}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A morphism $\alpha : x \to y$  is an \textit{isomorphism} iff there exists a morphism $\alpha^{-1} : y \to x$ such that $\alpha^{-1}\alpha = 1_{x}$ and $\alpha\alpha^{-1} = 1_{y}$.
+    $$\LARGE\begin{tikzcd}
+        \arrow[loop left, "1_x"] x \arrow[r, shift right, swap, "\alpha"] & y \arrow[l, shift right, swap, dashed, "\exists \alpha^{-1}"] \arrow[loop right, "1_y"]
+    \end{tikzcd}$$
+    \textit{i.e. it has a complete inverse.}
+
+    A morphism $\alpha : x \to y$ is a \textit{isomorphism} iff it is \ex{SplitMonicMorphisms}{split monic} and \ex{SplitEpicMorphisms}{split epic}.
+
+
+    \begin{definition}[Isomorphic]
+        Two \ex{Categories}{objects} $x$ and $y$ are \textbf{isomorphic} iff they have an \textit{isomorphism} between them. This is notated by $x \cong y$.
+    \end{definition}
+
+
+\begin{theorem}
+    A morphism is \textit{isomorphic} iff it is \ex{SplitMonicMorphisms}{split monic} and \ex{SplitEpicMorphisms}{split epic}.
+\end{theorem}
+\begin{proof}
+    ($\implies$)
+    $\alpha^{-1}$ directly gives $\beta$ for the definitions of \ex{SplitMonicMorphisms}{split monic} and \ex{SplitEpicMorphisms}{split epic} morphisms.
+
+    $\left( \impliedby \right)$
+    Let $\alpha :x \to y$ be \ex{SplitMonicMorphisms}{split monic} and \ex{SplitEpicMorphisms}{split epic}, so there exists $\beta,\gamma : y \to x$ such that $\beta\alpha = 1_{x}$ and $\alpha\gamma = 1_{y}$. Then
+    $$\beta = \beta {1}_{y} = \beta\alpha\gamma = 1_{x}\gamma = \gamma,$$
+    meaning $\alpha$ is an \textit{isomorphism} with $\alpha^{-1} = \beta = \gamma$. $\qed$
+\end{proof}
+
+\begin{theorem}
+     $\alpha^{-1}$ is unique
+\end{theorem}
+\begin{proof}
+    Let $\alpha : x \to y$ be an \textit{isomorphism} with two inverses $\alpha_1^{-1},\alpha_2^{-1} : y \to x$. Then
+    $$ \alpha_1^{-1} = 1_x\alpha_1^{-1} = \alpha_2^{-1}\alpha\alpha_1^{-1} = \alpha_2^{-1}1_y = \alpha_2^{-1}  $$
+\end{proof}
+
+
+\end{document}

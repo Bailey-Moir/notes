@@ -1,0 +1,15 @@
+\documentclass{atomic}
+\usepackage{hyperref}
+
+\title{Subcategories}
+\newcommand{\breadcrumb}{Category Theory}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A \textit{subcategory} of a \ex{Categories}{category} $C$ is another \ex{Categories}{category} $B$ formed from a \ex{Subsets}{subset} of the objects and morphisms of $C$ with the same \ex{CompositeFunctions}{composition} and identities as $C$.
+
+    \begin{definition}[Full \textit{Subcategories}]
+        A \textit{subcategory} $B$ of $C$ is \textbf{full} iff $\forall x,y \in B, B(x,y) = C(x,y)$
+        \textit{i.e. only orphaned morphisms are removed.}
+    \end{definition}
+\end{document}

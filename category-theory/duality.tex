@@ -1,0 +1,41 @@
+\documentclass{atomic}
+\usepackage{hyperref}
+
+\title{Duality}
+\newcommand{\breadcrumb}{Category Theory}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    We define the elementary language of \ex{Categories}{category theory} as the two sorted \ex{FirstOrderLogics}{first order logic} with
+    \begin{itemize}
+        \item objects and morphisms as the distinct sorts, together with 
+        \item \ex{Relations}{relations} of an object being the source or target of a morphism, and
+        \item a symbol for \ex{CompositeFunctions}{composition} morphisms.
+    \end{itemize}
+    Let $\sigma$ be a \ex{StatementsAndPropositions}{statement} in this language. The \textit{dual} of this statement $\sigma^\text{op}$ is the same as $\sigma$, except:
+    \begin{itemize}
+        \item The "source" and "target" \ex{Relations}{relations} are swapped, and
+        \item The order of \ex{CompositeFunctions}{composition} is swapped (every $f \circ g$ becomes $g \circ f$).
+    \end{itemize}
+
+    \begin{definition}[Self-dual]
+        A \ex{StatementsAndPropositions}{statement}/\ex{Sets}{set}/\ex{Classes}{class} is \textbf{self-dual} iff it is equal to its \textit{dual}.
+    \end{definition}
+
+    \begin{prop} \label{mirror-iff}
+        $\sigma$ is true in $\mathcal{C}$ iff $\sigma^\text{op}$ is true in $\mathcal{C}^\text{op}$.
+    \end{prop}
+
+    \begin{theorem} \label{statements-in-self-dual-category-collections}
+        If $\sigma$ holds for a \textbf{self-dual} \ex{Classes}{class} of \ex{Categories}{categories} $C$, so does $\sigma^\text{op}$.
+    \end{theorem}
+    \begin{proof}
+        Let $C$ be a \ex{Classes}{class} of \ex{Categories}{categories} that is \textbf{self-dual}.
+        Let $\sigma$ be a \ex{StatementsAndPropositions}{statement} in the elementary language of \ex{Categories}{category theory} that holds for all $\mathcal{C} \in C$.
+        Since $C$ is \textbf{self-dual}, $\sigma$ holds for $\mathcal{C}^\text{op}$.
+        Thus, by proposition \ref{mirror-iff} (and the fact that the dual of the dual is itself), $\sigma^\text{op}$ holds for $\mathcal{C}$. $\qed$
+    \end{proof}
+
+
+    
+\end{document}

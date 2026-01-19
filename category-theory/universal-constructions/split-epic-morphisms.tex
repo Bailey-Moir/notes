@@ -1,0 +1,35 @@
+
+\documentclass{atomic}
+
+\title{Split Epic Morphisms}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    A morphism $\alpha : x \to y$ is \textit{split epic} iff there exists a morphism $\beta : y \to x$ such that $\alpha\beta = 1_{y}$:
+    $$\LARGE\begin{tikzcd}
+        x \arrow[r, shift right, swap, "\alpha"] & y \arrow[l, shift right, swap, dashed, "\exists \beta"] \arrow[loop right, "1_y"]
+    \end{tikzcd}$$
+    \textit{i.e. it has a right inverse.}
+
+    \begin{remark*}
+        \textit{This} definition is \ex{Duality}{dual} to that of \ex{SplitEpicMorphisms}{split epic morphisms}.
+    \end{remark*}
+
+    \begin{theorem}
+        \textit{Split epic} $\to$ \ex{EpicMorphisms}{epic}
+    \end{theorem}
+    \begin{proof}
+        \ex{Categories}{Categories} are \ex{Duality}{self-dual}, and the \ex{StatementsAndPropositions}{statements} ``\textit{Split epic} $\to$ \ex{EpicMorphisms}{epic}'' and ``\ex{SplitMonicMorphisms}{Split monic} $\to$ \ex{MonicMorphisms}{monic}'' are \ex{Duality}{dual}, so \ref{Duality-statements-in-self-dual-category-collections} gives that this is implied by \ref{SplitMonicMorphisms-split-monic-implies-monic}.
+    \end{proof}
+
+    \begin{theorem}
+        In a \ex{ConcreteCategories}{concrete category}, every \textit{split epic} morphism is \ex{SurjectiveFunctions}{surjective}.
+    \end{theorem}
+    \begin{proof}
+        Let $\alpha : X \to Y$ be a \textit{split epic} morphism in $\mathcal{C}$, so there exists $\beta : Y \to X$ such that $\alpha\beta = 1_{Y}$.
+        For any $y \in Y$,
+        $$ y = 1_Y(y) = \alpha\beta(y) = \alpha(\beta(y)), $$
+        meaning $\alpha$ maps $\beta(y)$ to $y$, so $\alpha$ is \ex{SurjectiveFunctions}{surjective}.
+    \end{proof}
+\end{document}
