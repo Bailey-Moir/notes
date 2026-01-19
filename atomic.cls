@@ -15,6 +15,8 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{characterisation}[theorem]{Characterisation}
+\newtheorem*{characterisation*}{Characterisation}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
@@ -61,6 +63,7 @@
 \newcommand{\nodiv}{\negthickspace\not |~}
 
 \DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\inte}{int}
 
 \makeatletter
 \newcommand\currentdoc[1]{\edef\@currentlabel{#1}\label{#1}}

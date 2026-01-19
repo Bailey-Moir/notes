@@ -16,6 +16,10 @@
         Then $x \le y$ and $y \le z$, so by the \ex{TransitiveProperty}{transitivity} of \ex{Preorder}{preorder}, $x \le z$.
         Thus, $P(x,z) = \{ x \to z \}$, so $\beta\alpha : x \to z$ can be defined, and it must inherently be unique.
 
-        Let $x \in P$. By the \ex{ReflexiveProperty}{reflexivity} of \ex{Preorder}{preorder}, $x \le x$, so $P(x,x) = \{ x \to x \}$, meaning there is a unique morphism $1_{x} : x \to x$.
+        Let $x \in P$. By the \ex{ReflexiveProperty}{reflexivity} of \ex{Preorder}{preorder}, $x \le x$, so $P(x,x) = \{ x \to x \}$, meaning there is a unique morphism $1_{x} : x \to x$. $\qed$
     \end{proof}
+
+    \begin{remark*}
+        In such a \ex{Categories}{category}, the \ex{InitialObjects}{initial} is the least element (if one exists), and the \ex{TerminalObjects}{terminal} is the greatest element (if one exists).
+    \end{remark*}
 \end{document}

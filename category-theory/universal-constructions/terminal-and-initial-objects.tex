@@ -1,0 +1,35 @@
+
+\documentclass{atomic}
+
+\title{Terminal and Initial Objects}
+\newcommand{\breadcrumb}{Category Theory $>$ Universal Constructions}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    An object $c$ in a \ex{Categories}{category} $C$ is 
+    \begin{itemize}
+        \item \textit{initial} iff $\forall x \in C: \left|C(c,x)\right| = 1$, and
+        \item \textit{terminal} iff $\forall x \in C: \left|C(x,c)\right| = 1$
+    \end{itemize}
+
+    \begin{remark*}
+        \textit{These} two definitions are \ex{Duality}{dual}.
+    \end{remark*} 
+
+    \begin{example}[\ex{CategoryOfSets}{\textbf{Set}} and \ex{CategoryOfTopologies}{\textbf{Top}}]
+        In \textbf{\ex{CategoryOfSets}{Set}} and \textbf{\ex{CategoryOfTopologies}{Top}}, the \ex{EmptySet}{empty set} $\emptyset$ is the \textit{initial}, since for each object $X$, the empty \ex{Functions}{function} is the unique morphism from $\emptyset$ to $X$, and the \textit{terminals} are the singletons (one-point \ex{Sets}{sets}), since for each object $X$, the constant \ex{Functions}{function} is the unique morphism from $X$ to any given singleton.
+    \end{example}
+
+    \begin{theorem}[Uniqueness up to \ex{Isomorphisms}{Isomorphism}]
+        In any \ex{Categories}{category}, any two \textit{initial objects} are \ex{Isomorphisms}{isomorphic}, and any two \textit{terminal objects} are \ex{Isomorphisms}{isomorphic}.
+    \end{theorem}
+    \begin{proof}
+        Let $c$ and $c'$ be both \textit{initials} or \textit{terminals} in a \ex{Categories}{category} $C$.
+        Let $\alpha : c \to c'$ and $\alpha' : c' \to c$ be the unique morphisms between them.
+        \begin{itemize}
+            \item $\alpha\alpha' : c \to c$ must be unique, but by the \ex{Categories}{category} axioms, there must be a $1_{c} : c \to c$, meaning $\alpha\alpha' = 1_{c}$. Similarly,
+            \item $\alpha'\alpha : c' \to c'$ must be unique, but by the \ex{Categories}{category} axioms, there must be a $1_{c'} : c' \to c'$, meaning $\alpha'\alpha = 1_{c'}$.
+        \end{itemize}
+        Thus, $\alpha$ is an \ex{Isomorphisms}{isomorphism} with $\alpha^{-1} = \alpha'$, meaning $c \cong c'$. $\qed$
+    \end{proof}
+\end{document}

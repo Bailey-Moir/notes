@@ -1,0 +1,44 @@
+\documentclass{atomic}
+\usepackage{hyperref}
+
+\title{Interiors}
+\newcommand{\breadcrumb}{Topology $>$ Topological Operations}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    The \textit{interior} $\inte S$ of $S \subseteq X$ of a \ex{UnionsAndIntersections}{union} of all contained \ex{TopologicalSpaces}{open sets}:
+    \begin{align*}
+        \inte S &= \bigcup \{ A \subseteq X : A \subseteq S \land A \in \mathcal{T} \} \\
+                &= \bigcup \left( \mathcal{P}(S) \cap \mathcal{T} \right)\text{\footnotemark}.
+    \end{align*}
+
+    \begin{itemize}
+        \item $\inte S \in \mathcal{T}$
+        \item $\inte S \subseteq S$
+    \end{itemize}
+
+    \begin{characterisation*} \label{characterisation}
+        $p \in \inte S \iff \exists A \in \mathcal{N}_p : A \subseteq S$\footnotemark.
+    \end{characterisation*}
+    \begin{proof}
+        \phantom{}\vspace{-2.2em}
+        \begin{align*}
+            p \in \inte S &\iff \exists A \subseteq X : p \in A \land A \subseteq S \land A \in \mathcal{T} \\
+            &\iff \exists A \subseteq \mathcal{N}_p : A \subseteq S. \qed
+        \end{align*}
+    \end{proof}
+
+    \begin{theorem}
+        $S \in \mathcal{T} \iff S = \inte S$.
+    \end{theorem}
+    \begin{proof}
+        $\left( \implies \right)$
+        If $S \in \mathcal{T}$, then $S \in \mathcal{P}(S) \cap \mathcal{T}$. By the definition the \ex{PowerSets}{power set}, all other elements are \ex{Subsets}{subsets} of $S$, so \ex{UnionsAndIntersections}{unioning} them will give $S$. Thus, $\inte S = S$.
+        
+        ($\impliedby$)
+        If $S = \inte S \in \mathcal{T}$, $S \in \mathcal{T}$. $\qed$
+    \end{proof}
+    
+    \footnotetext[1]{\ex{PowerSets}{Power sets}}
+    \footnotetext[2]{\ex{Neighbourhoods}{Neighbourhoods}}
+\end{document}
