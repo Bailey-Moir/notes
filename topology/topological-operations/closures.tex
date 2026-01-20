@@ -1,0 +1,46 @@
+\documentclass{atomic}
+
+\title{Closures}
+\newcommand{\breadcrumb}{Topology $>$ Topological Operations}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    The \textit{closure} $\overline{S}$ of $S \subseteq X$ is the \ex{UnionsAndIntersections}{intersection} of all containing \ex{ClosedSets}{closed sets}:
+    \begin{align*}
+        \overline{S} &= \bigcap \{ A \subseteq X : S \subseteq A \land A^c \in \mathcal{T} \} \\
+        &= S \cup \partial S \\
+        &= \inte S \cup \partial S
+    \end{align*}
+
+    \begin{itemize}
+        \item $\overline{S}^c \in \mathcal{T}$
+        \item $S \subseteq \overline{S}$
+    \end{itemize}
+
+    \begin{characterisation*} \label{characterisation}
+        $p \in \overline{S} \iff \forall A \in \mathcal{N}_p : S \cap A \ne \emptyset$\footnotemark.
+    \end{characterisation*}
+    \begin{proof}
+        $\left( \implies \right)$ \textbf{\ex{ProofByContraposition}{Proof by Contraposition}} \\
+        Suppose there is a \ex{Neighbourhoods}{neighbourhood} $A$ of $p$ that is \ex{DisjointSets}{disjoint} from $S$. 
+        Then $S \subseteq A^c$ and $A^c$ is \ex{ClosedSets}{closed}.
+        Thus, by \textit{definition}, $\overline{S}$ is given through \ex{UnionsAndIntersections}{intersection} with $A^c$, meaning $\overline{S} \subseteq A^c$, so since $p \in A$, $p \notin \overline{S}$.
+
+        ($\impliedby$) \textbf{\ex{ProofByContraposition}{Proof by Contraposition}} \\
+        Let $p \in \overline{S}^c$. $\overline{S}^c \in \mathcal{N}_p$, and $S \cap \overline{S}^c = \emptyset$ since $S \subseteq \overline{S}$.
+        Thus, $\overline{S}^c$ satisfies $A$ in $\exists A \in \mathcal{N}_p : S \cap A = \emptyset$. $\qed$
+    \end{proof}
+
+    \begin{theorem}
+        $S^c \in \mathcal{T} \iff S = \overline{S}$.
+    \end{theorem}
+    \begin{proof}
+        $\left( \implies \right)$
+        If $S^c \in \mathcal{T}$ ($S$ is \ex{ClosedSets}{closed}), then $S \subseteq S$ and $S^c \in \mathcal{T}$, so $\overline{S}$ is given through \ex{UnionsAndIntersections}{intersection} with $S$, meaning $\overline{S} \subseteq S$. Together with the identity $S \subseteq \overline{S}$, this give $S = \overline{S}$.
+
+        ($\impliedby$)
+        If $S = \overline{S}$, since $\overline{S}^c \in \mathcal{T}$, $S^c \in \mathcal{T}$. $\qed$
+    \end{proof}
+    
+    \footnotetext[1]{\ex{Neighbourhoods}{Neighbourhoods}}
+\end{document}

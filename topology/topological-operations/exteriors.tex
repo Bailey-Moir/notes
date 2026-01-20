@@ -1,0 +1,36 @@
+\documentclass{atomic}
+
+\title{Exteriors}
+\newcommand{\breadcrumb}{Topology $>$ Topological Operations}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    The \textit{exterior} $\ext {S}$ of $S \subseteq X$ is the \ex{Complements}{complement} of its \ex{Closures}{closure}:
+    $$\ext S = \overline{S}^c$$
+
+    \begin{itemize}
+        \item $\ext S \in \mathcal{T}$
+    \end{itemize}
+
+    \begin{characterisation*} \label{characterisation}
+        $p \in \ext S \iff \exists A \in \mathcal{N}_p : S \cap A = \emptyset$\footnotemark.
+    \end{characterisation*}
+    \begin{proof}
+        This is given directly through the \ex{ConversesInversesAndContrapositives}{contrapositives} of the \ex[characterisation]{Closures}{characterisation of closures}. $\qed$
+    \end{proof}
+
+    \begin{theorem}
+        $\ext S = \inte S^c$.
+    \end{theorem}
+    \begin{proof}
+        \phantom{}\vspace{-2.1em}
+        \begin{align*}
+            p \in \ext S &\iff \exists A \in \mathcal{N}_p : S \cap A = \emptyset \\
+            &\iff \exists A \in \mathcal{N}_p : A \subseteq S^c \\
+            &\iff p \in \inte S^c\text{\footnotemark}
+        \end{align*}
+    \end{proof}
+
+    \footnotetext[1]{\ex{Neighbourhoods}{Neighbourhoods}}
+    \footnotetext[2]{\ex[characterisation]{Interiors}{Characterisation of interiors}}
+\end{document}

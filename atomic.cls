@@ -64,6 +64,7 @@
 
 \DeclareMathOperator{\proj}{proj}
 \DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\ext}{ext}
 
 \makeatletter
 \newcommand\currentdoc[1]{\edef\@currentlabel{#1}\label{#1}}
