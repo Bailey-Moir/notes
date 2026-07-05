@@ -6,16 +6,16 @@
 \begin{document}
     \pagestyle{plain} \currentdoc{note} \noindent
     Let $\{ c_i \}_{i \in I}$ be a \ex{Collections}{family} of objects in a \ex{Categories}{category} $C$.
-    \begin{definition}[Auxiliary Category]
+    \begin{definition}[Auxiliary Category] \label{auxiliary-category}
         The \textbf{auxiliary category} $D = D_\text{pr}$ is defined with
         \begin{itemize}
-            \item objects being the pairs $\left( x, \{\alpha_i\} \right)$, where $x \in C$ and $\alpha_i : x \to c_i$ for some $i \in I$, and
+            \item objects being the pairs $\left( x, \{\alpha_i\}_{i \in I} \right)$, where $x \in C$ and $\alpha_i : x \to c_i$ for all $i \in I$,
             \item morphisms from an object $\left( x, \{\alpha_i\}_{i \in I} \right)$ to $\left( y, \{\beta_i\}_{i \in I} \right)$ being the morphisms $\gamma : x \to y$ in $C$ such that $\forall i \in I, \beta_i\gamma = \alpha_i$, i.e., such that the following diagram is \ex{CommutativeDiagrams}{commutative} for all $i$:
             $$\large\begin{tikzcd}
                 x \arrow[dr, swap, "\alpha_i"] \arrow[rr, "\gamma"] & & y \arrow[dl, "\beta_i"] \\
                 & c_i
             \end{tikzcd},$$
-        \item \ex{CompositeFunctions}{composition} being the same as in $C$.
+        \item and \ex{CompositeFunctions}{composition} being the same as in $C$.
         \end{itemize}
     \end{definition}
 
@@ -32,5 +32,19 @@
     \begin{definition}[``Product Exists'']
         We say that a ``\textbf{product exists}'' in $C$ iff a \textit{product} exists for every \ex{Collections}{family} of objects in $C$.
     \end{definition}
+
+    \section{Binary Product} \label{binary-product}
+    $$\large\begin{tikzcd}[column sep={2em}, row sep={2em}]
+        & x \arrow[d, dashed, "\exists!f"] \\
+        & \arrow[dl, "\pi_1"] a \times b \arrow[dr, swap, "\pi_2"] \\[-2em]
+        a && b
+        \arrow[from=1-2, to=3-1, bend right, "f_1"']
+        \arrow[from=1-2, to=3-3, bend left, "f_2"]
+    \end{tikzcd}$$
+    When $\{ c_i \}_{i \in I} = \{ a,b \}$, and $p$ is denoted $a \times b$, you get the above. Stated without the language of the \hyperref[auxiliary-category]{auxiliary category}:
+
+    \begin{quote}
+        ``Objects $a,b \in C$ have a \textit{product} $a \times b$ and $\pi_1,\pi_2$ iff for every $x \in C$, there exists a unique morphism $f : x \to (a \times b)$ such that the above diagram is \ex{CommutativeDiagrams}{commutative} for all $f_1$ and $f_2$.''
+    \end{quote}
 
 \end{document}

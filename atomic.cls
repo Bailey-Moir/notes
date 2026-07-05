@@ -53,13 +53,21 @@
 \graphicspath{{\pwd/content/resources}}
 
 \newcommand{\ex}[3][note]{\hyperref[#2-#1]{#3}}
+\newcommand{\exref}[2][note]{\ref{#2-#1}}
 
-\newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
 \newcommand{\F}{\mathbb{F}}
+\newcommand{\B}{\mathbb{B}}
+
+\newcommand{\vecbf}[1]{\mathbf{\underline{#1}}}
+\newcommand{\vecu}[1]{\mathbf{\hat{\underline{#1}}}}
+
+\newcommand{\rel}{\mathcal{R}}
 \newcommand{\nodiv}{\negthickspace\not |~}
 
 \DeclareMathOperator{\proj}{proj}
