@@ -3,7 +3,7 @@
 \ProvidesClass{atomic}
 \LoadClass{article} 
 
-\newcommand{\pwd}{/home/charps/Documents/vaults/tex}
+\newcommand{\pwd}{/home/charps/Documents/vaults/texvault}
 
 \RequirePackage{tikz-cd}
 \RequirePackage{mathrsfs}

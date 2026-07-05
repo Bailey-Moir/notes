@@ -1,0 +1,20 @@
+\documentclass{atomic}
+
+\title{Kernels}
+\newcommand{\breadcrumb}{Category Theory}
+
+\begin{document}
+    \pagestyle{plain} \currentdoc{note} \noindent
+    Ooga boog
+
+    \[
+        \ker{\alpha} =
+        \lim_{\leftarrow}
+        \begin{tikzcd}
+        x \arrow[r, shift left, "\alpha"]
+          \arrow[r, shift right, swap, "0"]
+        & y
+        \end{tikzcd}
+    \]
+
+\end{document}
